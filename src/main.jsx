@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
 import "./index.css";
-import Form from "./pages/form.jsx";
+import Form from "./pages/Form.jsx";
 
 const router = createBrowserRouter(
   [
