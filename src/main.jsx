@@ -4,12 +4,17 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
 import "./index.css";
 import { redirectHandler } from "./pages/RedirectPage.jsx";
+import Privacy from "./pages/Privacy.jsx";
 
 const router = createBrowserRouter(
   [
     {
       path: "/",
       element: <App />,
+    },
+    {
+      path: "/privacy",
+      element: <Privacy />,
     },
     {
       path: "/form",
