@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
 import "./index.css";
-import Form from "./pages/Form.jsx";
+import { redirectHandler } from "./pages/RedirectPage.jsx";
 
 const router = createBrowserRouter(
   [
@@ -13,7 +13,15 @@ const router = createBrowserRouter(
     },
     {
       path: "/form",
-      element: <Form />,
+      element: redirectHandler(
+        "https://docs.google.com/forms/d/e/1FAIpQLScoN19fAklBenQlIPES3KYiInuK26iAkyHka6iPTnPdFRKwlQ/viewform?usp=sf_link"
+      ),
+    },
+    {
+      path: "/ios",
+      element: redirectHandler(
+        "https://apps.apple.com/app/%EB%B9%A0%EB%A5%B8-%EC%83%81%EC%83%81%EB%9E%A9/id6648756420"
+      ),
     },
   ],
   {

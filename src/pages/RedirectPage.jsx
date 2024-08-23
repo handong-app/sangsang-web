@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
 
-const linkUrl =
-  "https://docs.google.com/forms/d/e/1FAIpQLScoN19fAklBenQlIPES3KYiInuK26iAkyHka6iPTnPdFRKwlQ/viewform?usp=sf_link";
-
-function Form() {
+function RedirectPage({ linkUrl }) {
   useEffect(() => {
     window.location.replace(linkUrl);
   });
@@ -18,4 +15,5 @@ function Form() {
   );
 }
 
-export default Form;
+export default RedirectPage;
+export const redirectHandler = (linkUrl) => <RedirectPage linkUrl={linkUrl} />;
