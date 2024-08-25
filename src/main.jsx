@@ -28,6 +28,12 @@ const router = createBrowserRouter(
         "https://apps.apple.com/app/%EB%B9%A0%EB%A5%B8-%EC%83%81%EC%83%81%EB%9E%A9/id6648756420"
       ),
     },
+    {
+      path: "/android",
+      element: redirectHandler(
+        "https://docs.google.com/forms/d/e/1FAIpQLSfJLIpDF_AaLXocA-saLB3ndBU5Yjjrrts47SH2SVItbPUvAw/viewform?usp=sf_link"
+      ),
+    },
   ],
   {
     basename: import.meta.env.PUBLIC_URL,
