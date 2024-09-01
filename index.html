@@ -22,11 +22,75 @@
         }
       })(window.location);
     </script>
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"
+    />
+
+    <meta property="og:url" content="https://sangsang.handong.app/" />
+    <meta property="og:title" content="빠른상상랩" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://sangsang.handong.app/thumb.jpg"
+    />
+    <meta
+      property="og:description"
+      content="한동대학교 상상랩 예약 서비스, 빠른상상랩"
+    />
 
     <title>빠른 상상랩</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- 인앱 브라우저 bypass -->
+    <script type="text/javascript" charset="UTF-8">
+      var inappdeny_exec_vanillajs = (callback) => {
+        if (document.readyState !== "loading") {
+          callback();
+        } else {
+          document.addEventListener("DOMContentLoaded", callback);
+        }
+      };
+      inappdeny_exec_vanillajs(() => {
+        /* Do things after DOM has fully loaded */
+        function copytoclipboard(val) {
+          var t = document.createElement("textarea");
+          document.body.appendChild(t);
+          t.value = val;
+          t.select();
+          document.execCommand("copy");
+          document.body.removeChild(t);
+        }
+        function inappbrowserout() {
+          copytoclipboard(window.location.href);
+          alert(
+            'URL주소가 복사되었습니다.\n\nSafari가 열리면 주소창을 길게 터치한 뒤, "붙여놓기 및 이동"를 누르면 정상적으로 이용하실 수 있습니다.'
+          );
+          location.href = "x-web-search://?";
+        }
+
+        var useragt = navigator.userAgent.toLowerCase();
+        var target_url = location.href;
+
+        if (useragt.match(/kakaotalk/i)) {
+          //카카오톡 외부브라우저로 호출
+          location.href =
+            "kakaotalk://web/openExternal?url=" +
+            encodeURIComponent(target_url);
+        } else if (useragt.match(/line/i)) {
+          //라인 외부브라우저로 호출
+          if (target_url.indexOf("?") !== -1) {
+            location.href = target_url + "&openExternalBrowser=1";
+          } else {
+            location.href = target_url + "?openExternalBrowser=1";
+          }
+        }
+      });
+    </script>
   </body>
 </html>

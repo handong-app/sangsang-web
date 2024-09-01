@@ -1,0 +1,59 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+
+  background-color: #f5e343;
+}
+
+.App {
+  .heading {
+    font-size: 2em;
+    font-weight: 800;
+  }
+
+  .desc {
+    font-size: 1.2em;
+  }
+
+  .tb-margin {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  .icons {
+    display: flex;
+    gap: 8px;
+
+    img {
+      width: 200px;
+    }
+    @media screen and (max-width: 450px) {
+      display: block;
+    }
+  }
+
+  .image-crop {
+    width: calc(200px - 2px); /* Reduce width by 2px (1px each side) */
+    height: calc(200px - 2px); /* Reduce height by 2px (1px each side) */
+    overflow: hidden; /* Hide overflow */
+  }
+
+  .image-crop img {
+    display: block;
+    width: calc(100% + 2px); /* Extend the image width by 2px */
+    height: calc(100% + 2px); /* Extend the image height by 2px */
+    margin: -1px; /* Shift the image 1px up and left */
+  }
+
+  & {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 64px 16px;
+    align-items: center;
+
+    word-break: keep-all;
+    text-align: center;
+  }
+}

@@ -1,6 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import App from "./App.jsx";
 import "./index.css";
 import { redirectHandler } from "./pages/RedirectPage.jsx";
@@ -33,6 +37,10 @@ const router = createBrowserRouter(
       element: redirectHandler(
         "https://docs.google.com/forms/d/e/1FAIpQLSfJLIpDF_AaLXocA-saLB3ndBU5Yjjrrts47SH2SVItbPUvAw/viewform?usp=sf_link"
       ),
+    },
+    {
+      path: "*",
+      element: <Navigate replace to="/" />,
     },
   ],
   {
